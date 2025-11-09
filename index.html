@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Studio Streamline</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+        }
+        /* --accent-blue: #004085; (Navy Blue) or --accent-blue: #007BFF; (Medium Blue) */
+        /* --accent-green: #28A745; (Emerald Green)  */
+
+
+        /* Primary Background: White or Off-White.
+            --bg-primary: #FFFFFF; or --bg-primary: #FFFfF0;
+            Text: Dark Navy or Black.
+            --text-primary: #001f3f; (Deep Navy)
+            Primary Accent (Wisdom/Creativity): A rich purple.
+            --accent-purple: #6F42C1;
+            Secondary Accent (Innovation/Fun): A bright orange for interactive elements.
+            --accent-orange: #FF851B;  */
+        
+
+
+        /* Primary Background: Warm Beige.
+        --bg-primary: #F5F5DC; or --bg-primary: #EAE0D3;
+        Text: Brown or Dark Gray.
+        --text-primary: #5C4033; (Dark Brown)
+        Primary Accent: Teal for a touch of tranquility and nature.
+        --accent-teal: #008080;
+        Secondary Accent: Yellow for warmth and positivity.
+        --accent-yellow: #FFDC00;  */
+        
+        
+        /* header */
+        #masthead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            /*  position: fixed;
+            z-index: 99;
+            top: 0;
+            width: 100%; */
+            /* margin: 0 0 30px; */
+            overflow: auto;
+            color: #ffffff;
+            background: #333;
+            border-bottom: 2px solid #cccccc;
+            
+        }
+
+        #logo {
+            float: left;
+            width: 250px;
+            /* height: 10px; */
+            
+            font-family: Georgia, Times, "Times New Roman", serif;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 13px;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            background: #333;
+        }
+
+
+
+        nav {
+            display: flex;
+            float: right;
+            background: #444;
+            justify-content: center;
+        }
+
+            nav button {
+                background: none;
+                border: none;
+                color: white;
+                padding: 1rem 2rem;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: background 0.3s;
+            }
+
+                nav button:hover, nav button.active {
+                    background: #666;
+                }
+
+        section {
+            display: none;
+            /* padding: 2rem;*/
+            background: white;
+            /* max-width: 800px;*/
+
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+            section.active {
+                display: block;
+            }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.5rem 0;
+        }
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 500px;
+        }
+
+        /*width: 100%;
+            height: 500px;
+            background-color: darkolivegreen;
+            background: linear-gradient(135deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+
+            width: 100%;
+            height: 400px; 
+        background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('./assets/images/blue-red-yellow-and-green-wavy-rainbow-pattern-wallpaper-2560x1080_14.jpg'); 
+        background-size: cover;
+        background-position: center;
+        color: white; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #222;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        } 
+
+
+
+
+
+
+        */
+
+        
+
+        
+
+        .main_banner {
+            width: 100%;
+            height: 400px; /* Or desired height */
+            background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('./assets/images/blue-red-yellow-and-green-wavy-rainbow-pattern-wallpaper-2560x1080_14.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: white; /* For text readability on the gradient */
+            display: flex; /* To center content, if desired */
+            justify-content: center;
+            align-items: center;
+        }
+        .split-text-container {
+            display: flex;
+            font-size: 5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .text-part {
+            display: inline-block;
+            position: relative;
+            transform: translateX(0);
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+
+            .text-part.left {
+                transform: translateX(-200%);
+                animation-name: slide-in-left;
+            }
+
+            .text-part.right {
+                transform: translateX(200%);
+                animation-name: slide-in-right;
+            }
+
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+
+
+
+
+
+
+
+        /*ongoing classes card*/
+
+
+
+        /* Add shadows to create the "card" effect */
+        * {
+            box-sizing: border-box;
+
+        }
+
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+
+        }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        
+        
+
+
+
+
+
+
+        /* for Classes tab */
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #004085;
+            color: white;
+            font-size: 18px;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td {
+            color: #555;
+        }
+
+
+
+
+        /* footer */
+        footer {
+            text-align: center;
+            display: flex;
+            justify-content: space-around; /* Distribute items evenly */
+            align-items: flex-start; /* Align items to the top */
+            padding: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <header id="masthead">
+        <div class="nav_container">
+            <a href="index.html" id="logo">Studio Streamline</a>
+
+            <nav>
+                <button class="tab-button active" data-target="home">Home</button>
+                <button class="tab-button" data-target="classes">Classes</button>
+                <button class="tab-button" data-target="registration">Registration</button>
+                <button class="tab-button" data-target="contact">Contact</button>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    <section id="home" class="active">
+        <div class="main_banner">
+            <div class="split-text-container">
+                <span class="text-part left">Studio&nbsp;</span>
+                <span class="text-part right">&nbsp;Streamline</span>
+            </div>
+        </div>
+
+
+        
+
+
+
+
+        <h2>Latest News</h2>
+        <p>Welcome to our institution! Stay tuned for announcements and updates.</p>
+        <ul>
+            <li> New semester starts January 2026!</li>
+            <li> Registration discounts available until December 31!</li>
+            <li> Python Advanced class now open for enrollment.</li>
+        </ul>
+
+
+        <h2>Ongoing Classes</h2>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3>Card 4</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="classes">
+        <h2>Programming Class Information</h2>
+
+        <table>
+            <tr>
+                <th>Classes</th>
+                <th>Description</th>
+                <th>Courses</th>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>Introduction to structured programming using C language.</td>
+                <td>Course 1, Course 2(projects)</td>
+            </tr>
+            <tr>
+                <td>HTML & CSS</td>
+                <td>Learn how to design and structure webpages using HTML and CSS.</td>
+                <td>Course 1, Course 2(projects)</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>Object-oriented programming concepts using Java.</td>
+                <td>Course 1, Course 2(projects)</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Learn dynamic web scripting using JavaScript.</td>
+                <td>Course 1, Course 2(projects)</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>Introduction to programming using Python for data and web development.</td>
+                <td>Course 1, Course 2(projects)</td>
+            </tr>
+            <tr>
+                <td>Database Fundamentals</td>
+                <td>Understanding database concepts, SQL queries, and data modeling.</td>
+                <td>Database System Concepts</td>
+            </tr>
+        </table>
+
+
+        <br />
+        <h2>Korean Class Information</h2>
+
+        <table>
+            <tr>
+                <th>Classes</th>
+                <th>Description</th>
+                <th>Textbook</th>
+            </tr>
+            <tr>
+                <td>Beginner</td>
+                <td>Learn Korean alphabet and greetings.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Conversation 1</td>
+                <td>Learn everyday Korean.</td>
+                <td>세종학당 실용 한국어 1</td>
+            </tr>
+            <tr>
+                <td>Conversation 2</td>
+                <td>Learn everyday Korean.</td>
+                <td>세종학당 실용 한국어 2</td>
+            </tr>
+            <tr>
+                <td>Conversation 3</td>
+                <td>Learn everyday Korean</td>
+                <td>세종학당 실용 한국어 3</td>
+            </tr>
+            <tr>
+                <td>Conversation 4</td>
+                <td>Learn everyday Korean</td>
+                <td>세종학당 실용 한국어 4</td>
+            </tr>
+            <tr>
+                <td>TOPIK</td>
+                <td>language test</td>
+                <td>Level 1, Level 2</td>
+            </tr>
+        </table>
+        
+
+
+
+    </section>
+
+    <section id="registration">
+        <h2>Registration Form</h2>
+        <p>Please fill out the form below to register:</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZkHc5h4Dg9Hh1EUNq8sMR2uCj3MiUvhqZPAd3EJSaHqjMIg/viewform?embedded=true">
+            Loading…
+        </iframe>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        <p><strong>Location:</strong> 1234 Main St, City, Country</p>
+    </section>
+
+
+
+
+    <footer>
+        &copy; 2020 Copyright Studio Streamline
+    </footer>
+
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-button');
+        const sections = document.querySelectorAll('section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(sec => sec.classList.remove('active'));
+
+                button.classList.add('active');
+                document.getElementById(button.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>
